@@ -1,0 +1,39 @@
+name: Deploy vonsim (Preview next)
+
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - id: build
+        name: Build
+        run: |
+          git clone https://github.com/AndoniZubimendi/vonsim.git --single-branch --branch next --depth 1 _src
+          cd _src
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          pnpm install --frozen-lockfile
+          pnpm build --base "/vonsim-next/"
+          pnpm docs:build --base "/vonsim-next/docs/"
+          cd ..
+          rm -r vonsim-next
+          mv _src/dist vonsim-next
+          mv _src/docs/.vitepress/dist vonsim-next/docs
+          rm -rf _src
+
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: vonsim-next
+          message: Deployed vonsim next (AndoniZubimendi/vonsim@${{ steps.build.outputs.sha }})
+          default_author: github_actions
