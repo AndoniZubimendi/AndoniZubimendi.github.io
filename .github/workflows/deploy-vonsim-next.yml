@@ -25,11 +25,9 @@ jobs:
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
           pnpm install --frozen-lockfile
           pnpm build --base "/vonsim-next/"
-          pnpm docs:build --base "/vonsim-next/docs/"
           cd ..
           rm -r vonsim-next
           mv _src/dist vonsim-next
-          mv _src/docs/.vitepress/dist vonsim-next/docs
           rm -rf _src
 
       - uses: EndBug/add-and-commit@v9
