@@ -32,7 +32,7 @@ jobs:
           cd ../..
           rm -r vonsim-next
           mv _src/app/dist vonsim-next
-          mv -src/docs/dist vonsim-next/docs
+          mv _src/docs/dist vonsim-next/docs
           rm -rf _src
 
       - uses: EndBug/add-and-commit@v9
