@@ -28,7 +28,7 @@ jobs:
           pnpm build --base "/vonsim-next/"
           cd ..
           cd docs
-          pnpm build --base "/vonsim-next/"
+          pnpm build --base "/vonsim-next/docs/"
           cd ../..
           rm -r vonsim-next
           mv _src/app/dist vonsim-next
