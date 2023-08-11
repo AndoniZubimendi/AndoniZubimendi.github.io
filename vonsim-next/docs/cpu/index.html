@@ -467,8 +467,8 @@
 				</a>
 				<ul class="isMobile astro-XZIVLVP3" style="--depth: 1;">
 	<li class="astro-XZIVLVP3" style="--depth: 1;">
-				<a href="#interrupciones-reservadas" class="astro-XZIVLVP3" style="--depth: 1;">
-					<span class="astro-XZIVLVP3" style="--depth: 1;">Interrupciones reservadas</span>
+				<a href="#llamadas-al-sistema" class="astro-XZIVLVP3" style="--depth: 1;">
+					<span class="astro-XZIVLVP3" style="--depth: 1;">Llamadas al sistema</span>
 				</a>
 				
 			</li>
@@ -529,8 +529,8 @@
 				</a>
 				<ul class="astro-XZIVLVP3" style="--depth: 1;">
 	<li class="astro-XZIVLVP3" style="--depth: 1;">
-				<a href="#interrupciones-reservadas" class="astro-XZIVLVP3" style="--depth: 1;">
-					<span class="astro-XZIVLVP3" style="--depth: 1;">Interrupciones reservadas</span>
+				<a href="#llamadas-al-sistema" class="astro-XZIVLVP3" style="--depth: 1;">
+					<span class="astro-XZIVLVP3" style="--depth: 1;">Llamadas al sistema</span>
 				</a>
 				
 			</li>
@@ -651,15 +651,15 @@
 <li>modifica el <code>IP</code> para que apunte a la dirección de la rutina de interrupción.</li>
 </ol>
 <p>Y así se comienza a ejecutar la rutina de interrupción. Estas tienen el mismo formato que una <a href="#subrutinas">subrutina</a> salvo que terminan en <a href="/docs/cpu/instructions/iret/"><code>IRET</code></a> en vez de <a href="/docs/cpu/instructions/ret/"><code>RET</code></a>.</p>
-<h3 id="interrupciones-reservadas">Interrupciones reservadas</h3>
-<p>Hay algunas interrupciones que están reservadas para el funcionamiento del sistema. Estas son:</p>
+<h3 id="llamadas-al-sistema">Llamadas al sistema</h3>
+<p>El simulador permite realizar llamadas al sistema o <em>syscalls</em>. En el simulador, estas llamadas son realizadas idénticamente a las interrupciones. Antes de cargar un programa en memoria, se almacenan direcciones de memoria especiales en el vector de interrupciones. Estas direcciones corresponden a las rutinas de las <em>syscalls</em>. Los números de interrupción asociados a estas llamadas son:</p>
 <ul>
 <li><code>INT 0</code>: termina la ejecución del programa, equivalente a la instrucción <a href="/docs/cpu/instructions/hlt/"><code>HLT</code></a>;</li>
 <li><code>INT 3</code>: incia el modo de depuración (<em>breakpoint</em>);</li>
 <li><code>INT 6</code>: lee un carácter de la <a href="/docs/io/devices/console/">consola</a>;</li>
 <li><code>INT 7</code>: escribe una cadena de caracteres en la <a href="/docs/io/devices/console/">consola</a>.</li>
 </ul>
-<p>Estas pueden ser llamadas por el usuario mediante la instrucción <code>INT</code> o por el PIC (si se configura para ello).</p>
+<p>Además, las direcciones asociadas a estas llamadas son <code>8000h</code>, <code>8003h</code>, <code>8006h</code> y <code>8007h</code> respectivamente, que no son modificables por el usuario. Nótese que el programa podría modificar el vector de interrupciones e invalidar las llamadas al sistema. También podría posicionar en el <code>IP</code> una de las direcciones especiales y la llamada al sistema se ejecutaría de igual manera. Lo único necesario para que la <em>syscall</em> se ejecute es que se ejecute la dirección de la rutina asociada.</p>
 <hr>
 <p><small>Esta obra está bajo la licencia <a target="_blank" rel="license noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</small></p>
 									</div>
@@ -671,8 +671,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-10T19:17:48.000Z">
-				10 ago 2023
+			<time datetime="2023-08-11T04:13:31.000Z">
+				11 ago 2023
 			</time>
 		</p>
 	</div>

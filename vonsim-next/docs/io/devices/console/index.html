@@ -473,7 +473,7 @@
 	<div class="container astro-D6GZTGG2">
 									<div class="content astro-IT4GBDIL">
 										<p>El simulador cuenta con una consola para escribir y leer caracteres. Esta es un dispositivo y el CPU puede comunicarse con la misma únicamente mediante interrupciones. Esto es así por simplicidad, ya que una consola real es mucho más compleja. Por eso, en la interfaz gráfica del simulador, esta no se encuentra conectada a ningún módulo.</p>
-<p>Dentro de las interrupciones reservadas, se encuentran las interrupciones <code>INT 6</code> e <code>INT 7</code> para escribir y leer caracteres, respectivamente.</p>
+<p>Dentro de las <a href="/docs/cpu/#llamadas-al-sistema">llamadas al sistema</a>, se encuentran las interrupciones <code>INT 6</code> e <code>INT 7</code> para escribir y leer caracteres, respectivamente.</p>
 <p>Con <code>INT 6</code> se detiene la ejecución del código hasta que se escriba un carácter en la consola. El carácter que se escriba será guardado en la dirección de memoria almacenada en <code>BX</code> según su representación en ASCII.</p>
 <pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">1000h</span></span>
 <span class="line"><span style="color: var(--astro-code-color-text)">car </span><span style="color: var(--astro-code-token-keyword)">db</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-keyword)">?</span></span>
@@ -520,8 +520,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-10T19:17:48.000Z">
-				10 ago 2023
+			<time datetime="2023-08-11T04:13:31.000Z">
+				11 ago 2023
 			</time>
 		</p>
 	</div>

@@ -496,7 +496,7 @@
 <h2 id="uso">Uso</h2>
 <pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-color-text)">INT N</span></span></code></pre>
 <p><em>N</em> es el número de interrupción (0-255), que debe ser inmediato (ver <a href="/docs/cpu/assembly/#operandos">tipos de operandos</a>).</p>
-<p>Utiliza el mismo mecanismo de vector de interrupciones que las interrupciones por hardware. Generalmente se utiliza para llamar <a href="/docs/cpu/#interrupciones-reservadas">interrupciones reservadas</a>, pero si se la llama con cualquier otro número, se ejecutará la rutina de interrupción asociada a ese número.</p>
+<p>Utiliza el mismo mecanismo de vector de interrupciones que las interrupciones por hardware. Generalmente se utiliza para realizar <a href="/docs/cpu/#llamadas-al-sistema">llamadas al sistema</a>, pero si se la llama con cualquier otro número, se ejecutará la rutina de interrupción asociada a ese número.</p>
 <h2 id="codificación">Codificación</h2>
 <p><code>00011010</code>, <em>número de interrupción</em></p>
 <hr>
@@ -510,8 +510,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-10T19:17:48.000Z">
-				10 ago 2023
+			<time datetime="2023-08-11T04:13:31.000Z">
+				11 ago 2023
 			</time>
 		</p>
 	</div>
