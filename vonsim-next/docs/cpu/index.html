@@ -623,20 +623,20 @@
 <h2 id="subrutinas">Subrutinas</h2>
 <p>El procesador también implementa subrutinas. Estas son pequeños fragmentos de código que pueden ser llamados desde cualquier parte del programa. Para ello, se utiliza la instrucción <a href="/docs/cpu/instructions/call/"><code>CALL</code></a>. Esta instrucción almacena el <code>IP</code> en la <a href="#pila">pila</a>, y luego realiza un salto a la dirección de la subrutina, modificando el <code>IP</code> para que este apunte a la primera instrucción de la subrutina. Para volver de la subrutina, se utiliza la instrucción <a href="/docs/cpu/instructions/ret/"><code>RET</code></a>, que desapila la dirección apilada previamente por <code>CALL</code> y restaura el <code>IP</code>, volviendo a el punto de ejecución posterior a la llamada a la subrutina.</p>
 <p>Ejemplo de subrutina:</p>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-color-text)">      </span><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">3000h</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      </span><span style="color: var(--astro-code-token-comment)">; suma ax, bx y cx</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">sum3: add </span><span style="color: var(--astro-code-token-constant)">ax</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-constant)">bx</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      add </span><span style="color: var(--astro-code-token-constant)">ax</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-constant)">cx</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      ret</span></span>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">3000h</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #758575DD">; suma ax, bx y cx</span></span>
+<span class="line"><span style="color: #DBD7CAEE">sum3: </span><span style="color: #80A665">add</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">ax</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">bx</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #80A665">add</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">ax</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">cx</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #80A665">ret</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      </span><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">2000h</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      mov </span><span style="color: var(--astro-code-token-constant)">ax</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-constant)">1</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      mov </span><span style="color: var(--astro-code-token-constant)">bx</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-constant)">2</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      mov </span><span style="color: var(--astro-code-token-constant)">cx</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-constant)">3</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      call sum3</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      </span><span style="color: var(--astro-code-token-comment)">; ax = 6</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      hlt</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">      </span><span style="color: var(--astro-code-token-function)">end</span></span></code></pre>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2000h</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">ax</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">1</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">bx</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">cx</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">3</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #80A665">call</span><span style="color: #DBD7CAEE"> sum3</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #758575DD">; ax = 6</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #80A665">hlt</span></span>
+<span class="line"><span style="color: #DBD7CAEE">      </span><span style="color: #B8A965">end</span></span></code></pre>
 <h2 id="interrupciones">Interrupciones</h2>
 <p>El procesador admite interrupciones por hardware y por software, que pueden ser emitidas por el <a href="/docs/io/modules/pic/">PIC</a> o por la instrucción <a href="/docs/cpu/instructions/int/"><code>INT</code></a> respectivamente. Para ejecutar interrupciones por hardware, el proesador debe estar habilitado para recibir interrupciones. Esto es, <code>IF=1</code> (la <em>flag</em> de interrupciones activada).</p>
 <p>Ambas interrupciones deben propocionar un número de interrupción. En el caso de las interrupciones por software, esta es dada por el operando de la instrucción <code>INT</code> (<a href="/docs/cpu/instructions/int/">ver más</a>). En el caso de las interrupciones por hardware, esta es dada por el PIC (<a href="/docs/io/modules/pic/#funcionamiento">ver cómo se obtiene</a>). El número de interrupción debe ser un número entre <code>0</code> y <code>255</code>.</p>
@@ -671,8 +671,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-11T04:13:31.000Z">
-				11 ago 2023
+			<time datetime="2023-08-12T13:30:09.000Z">
+				12 ago 2023
 			</time>
 		</p>
 	</div>

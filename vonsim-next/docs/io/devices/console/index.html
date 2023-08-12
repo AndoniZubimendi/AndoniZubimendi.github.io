@@ -475,34 +475,34 @@
 										<p>El simulador cuenta con una consola para escribir y leer caracteres. Esta es un dispositivo y el CPU puede comunicarse con la misma únicamente mediante interrupciones. Esto es así por simplicidad, ya que una consola real es mucho más compleja. Por eso, en la interfaz gráfica del simulador, esta no se encuentra conectada a ningún módulo.</p>
 <p>Dentro de las <a href="/docs/cpu/#llamadas-al-sistema">llamadas al sistema</a>, se encuentran las interrupciones <code>INT 6</code> e <code>INT 7</code> para escribir y leer caracteres, respectivamente.</p>
 <p>Con <code>INT 6</code> se detiene la ejecución del código hasta que se escriba un carácter en la consola. El carácter que se escriba será guardado en la dirección de memoria almacenada en <code>BX</code> según su representación en ASCII.</p>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">1000h</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">car </span><span style="color: var(--astro-code-token-keyword)">db</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-keyword)">?</span></span>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">1000h</span></span>
+<span class="line"><span style="color: #DBD7CAEE">car </span><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">?</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">2000h</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">mov </span><span style="color: var(--astro-code-token-constant)">bx</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-keyword)">offset</span><span style="color: var(--astro-code-color-text)"> car</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">int </span><span style="color: var(--astro-code-token-constant)">6</span></span>
-<span class="line"><span style="color: var(--astro-code-token-comment)">; El usuario escribe un carácter</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">int </span><span style="color: var(--astro-code-token-constant)">0</span></span>
-<span class="line"><span style="color: var(--astro-code-token-function)">end</span></span>
+<span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2000h</span></span>
+<span class="line"><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">bx</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">offset</span><span style="color: #DBD7CAEE"> car</span></span>
+<span class="line"><span style="color: #80A665">int</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">6</span></span>
+<span class="line"><span style="color: #758575DD">; El usuario escribe un carácter</span></span>
+<span class="line"><span style="color: #80A665">int</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">0</span></span>
+<span class="line"><span style="color: #B8A965">end</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: var(--astro-code-token-comment)">; El carácter escrito se almacenó en 'car'.</span></span>
-<span class="line"><span style="color: var(--astro-code-token-comment)">; Por ejemplo, si el usuario presionó la tecla 'a', entonces</span></span>
-<span class="line"><span style="color: var(--astro-code-token-comment)">; se almacena el valor 61h en 'car'.</span></span></code></pre>
+<span class="line"><span style="color: #758575DD">; El carácter escrito se almacenó en 'car'.</span></span>
+<span class="line"><span style="color: #758575DD">; Por ejemplo, si el usuario presionó la tecla 'a', entonces</span></span>
+<span class="line"><span style="color: #758575DD">; se almacena el valor 61h en 'car'.</span></span></code></pre>
 <p>Con <code>INT 7</code> se escribe una cadena de caracteres en la consola. Recibe dos parámetros:</p>
 <ul>
 <li><code>AL</code>: longitud de la cadena a imprimir</li>
 <li><code>BX</code>: dirección de memoria donde empieza la cadena</li>
 </ul>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">1000h</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">cadena </span><span style="color: var(--astro-code-token-keyword)">db</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-string-expression)">"Hola!"</span></span>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">1000h</span></span>
+<span class="line"><span style="color: #DBD7CAEE">cadena </span><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #C98A7D">"Hola!"</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">2000h</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">mov </span><span style="color: var(--astro-code-token-constant)">bx</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-keyword)">offset</span><span style="color: var(--astro-code-color-text)"> cadena</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">mov </span><span style="color: var(--astro-code-token-constant)">al</span><span style="color: var(--astro-code-color-text)">, </span><span style="color: var(--astro-code-token-constant)">5</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">int </span><span style="color: var(--astro-code-token-constant)">7</span></span>
-<span class="line"><span style="color: var(--astro-code-token-comment)">; Se imprime "Hola!" (sin las comillas) en la consola.</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">int </span><span style="color: var(--astro-code-token-constant)">0</span></span>
-<span class="line"><span style="color: var(--astro-code-token-function)">end</span></span></code></pre>
+<span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2000h</span></span>
+<span class="line"><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">bx</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">offset</span><span style="color: #DBD7CAEE"> cadena</span></span>
+<span class="line"><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">al</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">5</span></span>
+<span class="line"><span style="color: #80A665">int</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">7</span></span>
+<span class="line"><span style="color: #758575DD">; Se imprime "Hola!" (sin las comillas) en la consola.</span></span>
+<span class="line"><span style="color: #80A665">int</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">0</span></span>
+<span class="line"><span style="color: #B8A965">end</span></span></code></pre>
 <p>Hay tres caracteres especiales:</p>
 <ul>
 <li>el carácter de retroceso (<code>BS</code>, 8 en decimal) borra el carácter previo;</li>
@@ -520,8 +520,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-11T04:13:31.000Z">
-				11 ago 2023
+			<time datetime="2023-08-12T13:30:09.000Z">
+				12 ago 2023
 			</time>
 		</p>
 	</div>

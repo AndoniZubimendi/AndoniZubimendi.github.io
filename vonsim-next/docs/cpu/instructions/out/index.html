@@ -494,7 +494,7 @@
 									<div class="content astro-IT4GBDIL">
 										<p>Esta instrucción escribe un byte en la <a href="/docs/io/modules/">memoria E/S</a>. Los <a href="/docs/cpu/#flags"><em>flags</em></a> no se modifican.</p>
 <h2 id="uso">Uso</h2>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-color-text)">OUT dest, fuente</span></span></code></pre>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #80A665">OUT</span><span style="color: #DBD7CAEE"> dest</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> fuente</span></span></code></pre>
 <p><em>dest</em> refiere al puerto o dirección de la memoria E/S. Puede ser un valor inmediato de 8 bits (ver <a href="/docs/cpu/assembly/#operandos">tipos de operandos</a>) o el registro <code>DX</code>. En el caso de utilizar <code>DX</code>, se utilizará la palabra almacenada en el registro como dirección de memoria E/S.</p>
 <p><em>fuente</em> puede ser <code>AL</code> o <code>AX</code>. Si es <code>AX</code>, primero se escribirá del puerto especificado por <em>dest</em> el valor en <code>AL</code>, y luego se escribirá en el puerto siguiente el valor de <code>AH</code>.</p>
 <h2 id="codificación">Codificación</h2>
@@ -516,8 +516,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-11T04:13:31.000Z">
-				11 ago 2023
+			<time datetime="2023-08-12T13:30:09.000Z">
+				12 ago 2023
 			</time>
 		</p>
 	</div>

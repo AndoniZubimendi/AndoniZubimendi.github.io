@@ -509,17 +509,17 @@
 										<p>Esta instrucción salta solo sí <code>ZF=1</code>. Los <a href="/docs/cpu/#flags"><em>flags</em></a> no se modifican.</p>
 <p>De saltar, copiará la dirección de salto en <code>IP</code>.</p>
 <h2 id="uso">Uso</h2>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-color-text)">JZ etiqueta</span></span></code></pre>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #80A665">JZ</span><span style="color: #DBD7CAEE"> etiqueta</span></span></code></pre>
 <p><em>etiqueta</em> debe ser una etiqueta que apunta a una instrucción.</p>
 <h3 id="ejemplo">Ejemplo</h3>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-color-text)">        </span><span style="color: var(--astro-code-token-function)">org</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-constant)">2000h</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">salto:  push </span><span style="color: var(--astro-code-token-constant)">ax</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">        </span><span style="color: var(--astro-code-token-comment)">; --- etc ---</span></span>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #DBD7CAEE">        </span><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2000h</span></span>
+<span class="line"><span style="color: #DBD7CAEE">salto:  </span><span style="color: #80A665">push</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">ax</span></span>
+<span class="line"><span style="color: #DBD7CAEE">        </span><span style="color: #758575DD">; --- etc ---</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">        jz salto </span><span style="color: var(--astro-code-token-comment)">; Válido</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">        jz </span><span style="color: var(--astro-code-token-constant)">2000h</span><span style="color: var(--astro-code-color-text)"> </span><span style="color: var(--astro-code-token-comment)">; Inválido, debe ser una etiqueta</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">        hlt</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">        </span><span style="color: var(--astro-code-token-function)">end</span></span></code></pre>
+<span class="line"><span style="color: #DBD7CAEE">        </span><span style="color: #80A665">jz</span><span style="color: #DBD7CAEE"> salto </span><span style="color: #758575DD">; Válido</span></span>
+<span class="line"><span style="color: #DBD7CAEE">        </span><span style="color: #80A665">jz</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2000h</span><span style="color: #DBD7CAEE"> </span><span style="color: #758575DD">; Inválido, debe ser una etiqueta</span></span>
+<span class="line"><span style="color: #DBD7CAEE">        </span><span style="color: #80A665">hlt</span></span>
+<span class="line"><span style="color: #DBD7CAEE">        </span><span style="color: #B8A965">end</span></span></code></pre>
 <h2 id="codificación">Codificación</h2>
 <p><code>00100010</code>, <em>dir-low</em>, <em>dir-high</em></p>
 <hr>
@@ -533,8 +533,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-11T04:13:31.000Z">
-				11 ago 2023
+			<time datetime="2023-08-12T13:30:09.000Z">
+				12 ago 2023
 			</time>
 		</p>
 	</div>

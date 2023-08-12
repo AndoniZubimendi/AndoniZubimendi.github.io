@@ -494,7 +494,7 @@
 									<div class="content astro-IT4GBDIL">
 										<p>Esta instrucción emite una <a href="/docs/cpu/#interrupciones">interrupción</a> por software. El <a href="/docs/cpu/#flags"><em>flag</em></a> <code>IF</code> cambia a <code>0</code> obligatoriamente porque se va a ejecutar una interrupción. Los demás <em>flags</em> no se modifican.</p>
 <h2 id="uso">Uso</h2>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-color-text)">INT N</span></span></code></pre>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #80A665">INT</span><span style="color: #DBD7CAEE"> N</span></span></code></pre>
 <p><em>N</em> es el número de interrupción (0-255), que debe ser inmediato (ver <a href="/docs/cpu/assembly/#operandos">tipos de operandos</a>).</p>
 <p>Utiliza el mismo mecanismo de vector de interrupciones que las interrupciones por hardware. Generalmente se utiliza para realizar <a href="/docs/cpu/#llamadas-al-sistema">llamadas al sistema</a>, pero si se la llama con cualquier otro número, se ejecutará la rutina de interrupción asociada a ese número.</p>
 <h2 id="codificación">Codificación</h2>
@@ -510,8 +510,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-11T04:13:31.000Z">
-				11 ago 2023
+			<time datetime="2023-08-12T13:30:09.000Z">
+				12 ago 2023
 			</time>
 		</p>
 	</div>

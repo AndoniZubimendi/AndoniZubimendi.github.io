@@ -479,8 +479,8 @@
 <li>y el registro de estado (dirección <code>41h</code> de la <a href="/docs/io/modules/">memoria E/S</a>).</li>
 </ul>
 <p>Específicamente,</p>
-<pre is:raw="" class="astro-code css-variables" style="background-color: var(--astro-code-color-background); overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: var(--astro-code-color-text)">Datos  = DDDD DDDD</span></span>
-<span class="line"><span style="color: var(--astro-code-color-text)">Estado = I___ __SB</span></span></code></pre>
+<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #dbd7caee">Datos  = DDDD DDDD</span></span>
+<span class="line"><span style="color: #dbd7caee">Estado = I___ __SB</span></span></code></pre>
 <p>En el registro de datos se almacenará carácter a imprimir, expresado en ASCII. Cada vez que la CPU escriba sobre ese registro, el <em>handshake</em> se encargará de realizar un flanco ascendente en el <em>strobe</em> para que el carácter se imprima automáticamente.</p>
 <p>En el registro de estado, los dos bits menos significativos son el <em>strobe</em> y <em>busy</em> (<a href="/docs/io/devices/printer/">leer más sobre los mismos</a>), análogamente a como se usan en una impresora conectada con un PIO. La diferencia es que el bit de <em>busy</em> no puede ser modificado por la CPU y el bit de <em>strobe</em> siempre es <code>0</code>. Si la CPU trata de escribir un <code>1</code> en el bit de <em>strobe</em>, este causará un flanco ascendente en el <em>strobe</em>, enviando lo almacenado en el registro de datos, y el handshake lo volverá a <code>0</code> automáticamente.</p>
 <p>Además, el bit más significativo del registro de estado habilita/inhabilita las interrupciones. Si este bit es <code>1</code>, mientras la impresora no esté ocupada (<code>B=0</code>), el Handshake disparará una interrupción por hardware. Está conectado al puerto <code>INT2</code> del <a href="/docs/io/modules/pic/">PIC</a>.</p>
@@ -495,8 +495,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-11T04:13:31.000Z">
-				11 ago 2023
+			<time datetime="2023-08-12T13:30:09.000Z">
+				12 ago 2023
 			</time>
 		</p>
 	</div>
