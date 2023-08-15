@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr" data-has-toc data-has-sidebar class="astro-VHH3SXKB">
 	<head>
-		<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Consola</title><link rel="canonical" href="https://vonsim.github.io/vonsim-next/docs/io/devices/console/"/><link rel="sitemap" href="/vonsim-next/docs/sitemap-index.xml"/><link rel="shortcut icon" href="/vonsim-next/docs/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v2.10.5"/><meta name="generator" content="Starlight v0.7.0"/><meta property="og:title" content="Consola"/><meta property="og:type" content="article"/><meta property="og:url" content="https://vonsim.github.io/vonsim-next/docs/io/devices/console/"/><meta property="og:locale" content="es"/><meta property="og:description"/><meta property="og:site_name" content="VonSim"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Consola"/><meta name="twitter:description"/>
+		<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Teclado</title><link rel="canonical" href="https://vonsim.github.io/vonsim-next/docs/io/devices/keyboard/"/><link rel="sitemap" href="/vonsim-next/docs/sitemap-index.xml"/><link rel="shortcut icon" href="/vonsim-next/docs/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v2.10.5"/><meta name="generator" content="Starlight v0.7.0"/><meta property="og:title" content="Teclado"/><meta property="og:type" content="article"/><meta property="og:url" content="https://vonsim.github.io/vonsim-next/docs/io/devices/keyboard/"/><meta property="og:locale" content="es"/><meta property="og:description"/><meta property="og:site_name" content="VonSim"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Teclado"/><meta name="twitter:description"/>
 		
 	<link rel="stylesheet" href="/vonsim-next/docs/_astro/404.d6725023.css" /><script type="module" src="/vonsim-next/docs/_astro/hoisted.64889eba.js"></script></head>
 	<body class="astro-VHH3SXKB">
@@ -342,16 +342,20 @@
 						Reloj
 					</a>
 			</li><li class="astro-BDI6FRMY">
-				<a href="/vonsim-next/docs/io/devices/console/" aria-current="page" class="astro-BDI6FRMY">
-						Consola
-					</a>
-			</li><li class="astro-BDI6FRMY">
 				<a href="/vonsim-next/docs/io/devices/f10/" class="astro-BDI6FRMY">
 						Tecla F10
 					</a>
 			</li><li class="astro-BDI6FRMY">
+				<a href="/vonsim-next/docs/io/devices/keyboard/" aria-current="page" class="astro-BDI6FRMY">
+						Teclado
+					</a>
+			</li><li class="astro-BDI6FRMY">
 				<a href="/vonsim-next/docs/io/devices/printer/" class="astro-BDI6FRMY">
 						Impresora
+					</a>
+			</li><li class="astro-BDI6FRMY">
+				<a href="/vonsim-next/docs/io/devices/screen/" class="astro-BDI6FRMY">
+						Pantalla
 					</a>
 			</li><li class="astro-BDI6FRMY">
 				<a href="/vonsim-next/docs/io/devices/switches-and-leds/" class="astro-BDI6FRMY">
@@ -465,16 +469,15 @@
 								<div class="content-panel astro-D6GZTGG2">
 	<div class="container astro-D6GZTGG2">
 									<h1 id="_top" data-page-title style="font-size: var(--sl-text-h1); line-height: var(--sl-line-height-headings); font-weight: 600; color: var(--sl-color-white); margin-top: 1rem;" class="astro-VHH3SXKB">
-										Consola
+										Teclado
 									</h1>
 									</div>
 </div>
 								<div class="content-panel astro-D6GZTGG2">
 	<div class="container astro-D6GZTGG2">
 									<div class="content astro-IT4GBDIL">
-										<p>El simulador cuenta con una consola para escribir y leer caracteres. Esta es un dispositivo y el CPU puede comunicarse con la misma únicamente mediante interrupciones. Esto es así por simplicidad, ya que una consola real es mucho más compleja. Por eso, en la interfaz gráfica del simulador, esta no se encuentra conectada a ningún módulo.</p>
-<p>Dentro de las <a href="/docs/cpu/#llamadas-al-sistema">llamadas al sistema</a>, se encuentran las interrupciones <code>INT 6</code> e <code>INT 7</code> para escribir y leer caracteres, respectivamente.</p>
-<p>Con <code>INT 6</code> se detiene la ejecución del código hasta que se escriba un carácter en la consola. El carácter que se escriba será guardado en la dirección de memoria almacenada en <code>BX</code> según su representación en ASCII.</p>
+										<p>El teclado es un dispositivo de entrada que permite al usuario ingresar caracteres al sistema. La forma de comunicarse con el teclado es mediante una <a href="/docs/cpu/#llamadas-al-sistema">llamada al sistema</a>. Esto es así por simplicidad, ya que un teclado real es mucho más complejo.</p>
+<p>Con la llamada <code>INT 6</code> se detiene la ejecución del código hasta que se presione una tecla en el teclado. El carácter que correspona será guardado en la dirección de memoria almacenada en <code>BX</code> según su representación en ASCII.</p>
 <pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">1000h</span></span>
 <span class="line"><span style="color: #DBD7CAEE">car </span><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">?</span></span>
 <span class="line"></span>
@@ -488,40 +491,19 @@
 <span class="line"><span style="color: #758575DD">; El carácter escrito se almacenó en 'car'.</span></span>
 <span class="line"><span style="color: #758575DD">; Por ejemplo, si el usuario presionó la tecla 'a', entonces</span></span>
 <span class="line"><span style="color: #758575DD">; se almacena el valor 61h en 'car'.</span></span></code></pre>
-<p>Con <code>INT 7</code> se escribe una cadena de caracteres en la consola. Recibe dos parámetros:</p>
-<ul>
-<li><code>AL</code>: longitud de la cadena a imprimir</li>
-<li><code>BX</code>: dirección de memoria donde empieza la cadena</li>
-</ul>
-<pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">1000h</span></span>
-<span class="line"><span style="color: #DBD7CAEE">cadena </span><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #C98A7D">"Hola!"</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2000h</span></span>
-<span class="line"><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">bx</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">offset</span><span style="color: #DBD7CAEE"> cadena</span></span>
-<span class="line"><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> </span><span style="color: #4D9375">al</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">5</span></span>
-<span class="line"><span style="color: #80A665">int</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">7</span></span>
-<span class="line"><span style="color: #758575DD">; Se imprime "Hola!" (sin las comillas) en la consola.</span></span>
-<span class="line"><span style="color: #80A665">int</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">0</span></span>
-<span class="line"><span style="color: #B8A965">end</span></span></code></pre>
-<p>Hay tres caracteres especiales:</p>
-<ul>
-<li>el carácter de retroceso (<code>BS</code>, 8 en decimal) borra el carácter previo;</li>
-<li>el carácter de salto de línea (<code>LF</code>, 10 en decimal) imprime, en efecto, un salto de línea — útil para no imprimir todo en una sola línea;</li>
-<li>el carácter de <em>form feed</em> (<code>FF</code>, 12 en decimal) limpia la consola.</li>
-</ul>
 <hr>
 <p><small>Esta obra está bajo la licencia <a target="_blank" rel="license noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</small></p>
 									</div>
 									<footer class="astro-RSSOL2CW">
 	<div class="meta flex astro-RSSOL2CW">
-		<a href="https://github.com/vonsim/vonsim/edit/main/docs/src/content/docs/io/devices/console.md" class="flex astro-V4AZHCIM">
+		<a href="https://github.com/vonsim/vonsim/edit/main/docs/src/content/docs/io/devices/keyboard.md" class="flex astro-V4AZHCIM">
 			<svg aria-hidden="true" class="astro-V4AZHCIM astro-JYO2DNKM" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>
 			Edita esta página
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-12T13:30:09.000Z">
-				12 ago 2023
+			<time datetime="2023-08-15T05:37:32.000Z">
+				15 ago 2023
 			</time>
 		</p>
 	</div>

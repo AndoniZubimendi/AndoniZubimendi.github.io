@@ -342,16 +342,20 @@
 						Reloj
 					</a>
 			</li><li class="astro-BDI6FRMY">
-				<a href="/vonsim-next/docs/io/devices/console/" class="astro-BDI6FRMY">
-						Consola
-					</a>
-			</li><li class="astro-BDI6FRMY">
 				<a href="/vonsim-next/docs/io/devices/f10/" class="astro-BDI6FRMY">
 						Tecla F10
 					</a>
 			</li><li class="astro-BDI6FRMY">
+				<a href="/vonsim-next/docs/io/devices/keyboard/" class="astro-BDI6FRMY">
+						Teclado
+					</a>
+			</li><li class="astro-BDI6FRMY">
 				<a href="/vonsim-next/docs/io/devices/printer/" class="astro-BDI6FRMY">
 						Impresora
+					</a>
+			</li><li class="astro-BDI6FRMY">
+				<a href="/vonsim-next/docs/io/devices/screen/" class="astro-BDI6FRMY">
+						Pantalla
 					</a>
 			</li><li class="astro-BDI6FRMY">
 				<a href="/vonsim-next/docs/io/devices/switches-and-leds/" class="astro-BDI6FRMY">
@@ -656,8 +660,8 @@
 <ul>
 <li><code>INT 0</code>: termina la ejecución del programa, equivalente a la instrucción <a href="/docs/cpu/instructions/hlt/"><code>HLT</code></a>;</li>
 <li><code>INT 3</code>: incia el modo de depuración (<em>breakpoint</em>);</li>
-<li><code>INT 6</code>: lee un carácter de la <a href="/docs/io/devices/console/">consola</a>;</li>
-<li><code>INT 7</code>: escribe una cadena de caracteres en la <a href="/docs/io/devices/console/">consola</a>.</li>
+<li><code>INT 6</code>: lee un carácter del <a href="/docs/io/devices/keyboard/">teclado</a>;</li>
+<li><code>INT 7</code>: escribe una cadena de caracteres en <a href="/docs/io/devices/screen/">pantalla</a>.</li>
 </ul>
 <p>Además, las direcciones asociadas a estas llamadas son <code>8000h</code>, <code>8003h</code>, <code>8006h</code> y <code>8007h</code> respectivamente, que no son modificables por el usuario. Nótese que el programa podría modificar el vector de interrupciones e invalidar las llamadas al sistema. También podría posicionar en el <code>IP</code> una de las direcciones especiales y la llamada al sistema se ejecutaría de igual manera. Lo único necesario para que la <em>syscall</em> se ejecute es que se ejecute la dirección de la rutina asociada.</p>
 <hr>
@@ -671,8 +675,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-12T13:30:09.000Z">
-				12 ago 2023
+			<time datetime="2023-08-15T05:37:32.000Z">
+				15 ago 2023
 			</time>
 		</p>
 	</div>
