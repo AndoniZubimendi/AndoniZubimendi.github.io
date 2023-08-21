@@ -286,6 +286,10 @@
 </ul>
 					</details>
 			</li><li class="astro-IRBRV5MS">
+				<a href="/vonsim-next/docs/memory/" class="large astro-IRBRV5MS">
+						Memoria principal
+					</a>
+			</li><li class="astro-IRBRV5MS">
 				<details open class="astro-IRBRV5MS">
 						<summary class="astro-IRBRV5MS">
 							<h2 class="large astro-IRBRV5MS">Entrada/Salida</h2>
@@ -490,8 +494,8 @@
 								<div class="content-panel astro-CMDQCONQ">
 	<div class="container astro-CMDQCONQ">
 									<div class="content astro-VPIH3PBD">
-										<p>VonSim implementa dos “memorias”. Una es la memoria principal de almacenamiento, que cuenta con 32 kB de espacio (<code>0000h</code> hasta <code>7FFFh</code>) y donde se almacenan los programas y datos.</p>
-<p>La otra es la memoria de entrada/salida, a la que se accede con direcciones de un byte (<code>00h</code> hasta <code>FFh</code>) y se encuentra aislada de la memoria principal. Es decir, para acceder a ella se utilizan exclusivamente las instrucciones <a href="/docs/cpu/instructions/in/"><code>IN</code></a> y <a href="/docs/cpu/instructions/out/"><code>OUT</code></a>. Cuando se quiere acceder a un módulo de entrada/salida, la <a href="/docs/cpu/">CPU</a> activa la señal <code>M/IO</code>, lo que causa que un selector de chips (<em>chip select</em>) lea la dirección del bus del direcciones y envíe la señal de lectura/escritura al módulo correspondiente.</p>
+										<p>La memoria de entrada/salida se encuentra aislada de la memoria principal. Es decir, para acceder a ella se utilizan exclusivamente las instrucciones <a href="/docs/cpu/instructions/in/"><code>IN</code></a> y <a href="/docs/cpu/instructions/out/"><code>OUT</code></a>. Cuando se quiere acceder a un módulo de entrada/salida, la <a href="/docs/cpu/">CPU</a> activa la señal <code>IO/M</code>, lo que causa que un selector de chips (<em>chip select</em>) lea la dirección del bus del direcciones y envíe la señal de lectura/escritura al módulo correspondiente.</p>
+<p>El rango de direcciones de la memoria de entrada/salida es de <code>00h</code> hasta <code>FFh</code> (256 direcciones).</p>
 <h2 id="registros-de-es">Registros de E/S</h2>
 <p>Estos son las registros de entrada/salida disponibles en el simulador, todos de 8 bits:</p>
 
@@ -616,8 +620,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-19T05:49:42.000Z">
-				19 ago 2023
+			<time datetime="2023-08-21T17:16:18.000Z">
+				21 ago 2023
 			</time>
 		</p>
 	</div>

@@ -286,6 +286,10 @@
 </ul>
 					</details>
 			</li><li class="astro-IRBRV5MS">
+				<a href="/vonsim-next/docs/memory/" class="large astro-IRBRV5MS">
+						Memoria principal
+					</a>
+			</li><li class="astro-IRBRV5MS">
 				<details open class="astro-IRBRV5MS">
 						<summary class="astro-IRBRV5MS">
 							<h2 class="large astro-IRBRV5MS">Entrada/Salida</h2>
@@ -480,13 +484,13 @@
 								<div class="content-panel astro-CMDQCONQ">
 	<div class="container astro-CMDQCONQ">
 									<div class="content astro-VPIH3PBD">
-										<p>En el simulador, hay un dos <a href="/docs/io/modules/">módulos de E/S</a> que están siempre conectados al bus: un <a href="/docs/io/modules/pic/">PIC</a> y un <a href="/docs/io/modules/timer/"><em>timer</em></a>. Además, dos <a href="/docs/io/devices/">dispositivos</a>: un <a href="/docs/io/devices/clock/">reloj</a> conectado al <em>timer</em> y una <a href="/docs/io/devices/f10/">tecla</a> conectada al PIC para interrupir a la CPU. Hay también hay un <a href="/docs/io/devices/keyboard/">teclado</a> y una <a href="/docs/io/devices/screen/">pantalla</a>, pero no están conectados al bus.</p>
-<p>A su vez, el simulador VonSim se puede configurar según las necesidades del usuario. Para ello, se pueden conectar y desconectar módulos y dispositivos de entrada/salida. Las <em>configuraciones</em> disponibles son las siguientes:</p>
+										<p>Por defecto, los únicos componentes conectados al bus la <a href="/docs/cpu/">CPU</a> y la <a href="/docs/memory/">memoria principal</a>. El simulador puede configurarse para conectar <a href="/docs/io/modules/">módulos</a> de entrada/salida al bus y otros <a href="/docs/io/devices/">dispositivos</a>. Estos se encuentrar agrupados en conjuntos o configuraciones:</p>
 <ul>
 <li><strong>PIO con teclas y luces</strong>: un <a href="/docs/io/modules/pio/">PIO</a> conectado a <a href="/docs/io/devices/switches-and-leds/">teclas y luces</a>.</li>
 <li><strong>PIO con impresora</strong>: un <a href="/docs/io/modules/pio/">PIO</a> conectado a una <a href="/docs/io/devices/printer/">impresora Centronics</a>.</li>
 <li><strong>Handshake</strong>: Una <a href="/docs/io/devices/printer/">impresora Centronics</a> conectada por un <a href="/docs/io/modules/handshake">Handshake</a>.</li>
 </ul>
+<p>Estas configuraciones, además, incluyen un <a href="/docs/io/modules/pic/">PIC</a>, la <a href="/docs/io/devices/f10/">tecla F10</a> para interrumpir, un <a href="/docs/io/modules/timer/">timer</a> con su <a href="/docs/io/devices/clock/">reloj</a>, una <a href="/docs/io/devices/screen/">pantalla</a> y un <a href="/docs/io/devices/keyboard/">teclado</a>.</p>
 <hr>
 <p><small>Esta obra está bajo la licencia <a target="_blank" rel="license noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</small></p>
 									</div>
@@ -498,8 +502,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-19T05:49:42.000Z">
-				19 ago 2023
+			<time datetime="2023-08-21T17:16:18.000Z">
+				21 ago 2023
 			</time>
 		</p>
 	</div>

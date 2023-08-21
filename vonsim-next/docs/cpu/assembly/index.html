@@ -286,6 +286,10 @@
 </ul>
 					</details>
 			</li><li class="astro-IRBRV5MS">
+				<a href="/vonsim-next/docs/memory/" class="large astro-IRBRV5MS">
+						Memoria principal
+					</a>
+			</li><li class="astro-IRBRV5MS">
 				<details open class="astro-IRBRV5MS">
 						<summary class="astro-IRBRV5MS">
 							<h2 class="large astro-IRBRV5MS">Entrada/Salida</h2>
@@ -543,20 +547,23 @@
 <span class="line"><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">10b</span><span style="color: #DBD7CAEE">    </span><span style="color: #758575DD">; Los números binarios se escriben con un sufijo b.</span></span>
 <span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; En este caso, se escribe el byte 10b (2) en la dirección 1002h.</span></span>
 <span class="line"></span>
+<span class="line"><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #C98A7D">'0'</span><span style="color: #DBD7CAEE">    </span><span style="color: #758575DD">; Los caracteres se escriben entre comillas simples.</span></span>
+<span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; En este caso, se escribe el byte 30h (48) en la dirección 1003h.</span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #CB7676">dw</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">5</span><span style="color: #DBD7CAEE">      </span><span style="color: #758575DD">; DW es la directiva para escribir una palabra (2 bytes) en memoria.</span></span>
-<span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; En este caso, se escribe la palabra 5 en la dirección 1003h.</span></span>
-<span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; Quedando el byte 05h en la dirección 1003h y 00h en 1004h.</span></span>
+<span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; En este caso, se escribe la palabra 5 en la dirección 1004h.</span></span>
+<span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; Quedando el byte 05h en la dirección 1004h y 00h en 1005h.</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #DBD7CAEE">etq </span><span style="color: #CB7676">dw</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">7</span><span style="color: #DBD7CAEE">  </span><span style="color: #758575DD">; 'etq' es una etiqueta. Se utiliza para referenciar una dirección</span></span>
 <span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; de memoria.</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #CB7676">dw</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">?</span><span style="color: #DBD7CAEE">      </span><span style="color: #758575DD">; El símbolo ? indica que el valor de la palabra es desconocido. En</span></span>
-<span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; este caso, no se escribe nada las direcciones 1007h y 1008h.</span></span>
+<span class="line"><span style="color: #DBD7CAEE">          </span><span style="color: #758575DD">; este caso, no se escribe nada las direcciones 1008h y 1009h.</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #DBD7CAEE">str </span><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #C98A7D">"Hola, Mundo!"</span><span style="color: #DBD7CAEE"> </span><span style="color: #758575DD">; También se pueden escribir cadenas de texto en ASCII,</span></span>
 <span class="line"><span style="color: #DBD7CAEE">                      </span><span style="color: #758575DD">; (H=48h, o=6Fh, l=6Ch, a=61h, ...). En este caso, se</span></span>
-<span class="line"><span style="color: #DBD7CAEE">                      </span><span style="color: #758575DD">; guardará la cadena a partir de la dirección 1009h.</span></span>
-<span class="line"><span style="color: #DBD7CAEE">                      </span><span style="color: #758575DD">; Quedando 48h en 1009h, 6Fh en 100Ah, 6Ch en 100Bh, etc.</span></span>
+<span class="line"><span style="color: #DBD7CAEE">                      </span><span style="color: #758575DD">; guardará la cadena a partir de la dirección 100Ah.</span></span>
+<span class="line"><span style="color: #DBD7CAEE">                      </span><span style="color: #758575DD">; Quedando 48h en 100Ah, 6Fh en 100Bh, 6Ch en 100Ch, etc.</span></span>
 <span class="line"><span style="color: #DBD7CAEE">                      </span><span style="color: #758575DD">; Las cadenas solo se pueden escribir con la directiva DB.</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">1</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">3</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">4</span><span style="color: #DBD7CAEE"> </span><span style="color: #758575DD">; Se pueden escribir varios bytes en una misma línea.</span></span>
@@ -605,24 +612,31 @@
 <span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2000h</span></span>
 <span class="line"><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> dato</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">6h</span></span>
 <span class="line"><span style="color: #758575DD">; Equivalente a</span></span>
-<span class="line"><span style="color: #758575DD">; mov byte ptr [1000h], 6h</span></span></code></pre>
+<span class="line"><span style="color: #758575DD">; mov byte ptr [1000h], 6h</span></span>
+<span class="line"><span style="color: #80A665">mov</span><span style="color: #DBD7CAEE"> dato</span><span style="color: #CB7676">+</span><span style="color: #4C9A91">1</span><span style="color: #666666">,</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">6h</span></span>
+<span class="line"><span style="color: #758575DD">; Equivalente a</span></span>
+<span class="line"><span style="color: #758575DD">; mov byte ptr [1001h], 6h</span></span></code></pre>
+<p>En este caso, la etiqueta <code>dato</code> hace referencia a la dirección de memoria <code>1000h</code>. Por lo tanto, <code>dato+1</code> hace referencia a la dirección de memoria <code>1001h</code>. Esto funcionará siempre y cuando el operando sea de la forma <code>etiqueta +/- constante</code>. Por ejemplo, <code>dato+bx</code> no funcionará, pero <code>dato - 6*8 + offset otra_etiqueta</code> sí (pero no es recomendable; se recomienda utilizar <code>etiqueta +/- número</code> para una mejor lectura y entendimiento del código).</p>
 <h3 id="valores-inmediatos">Valores inmediatos</h3>
 <p>Los valores inmediatos son valores que se pueden determinar al momento de ensamblar el programa. Por ejemplo, en <code>mov ax, 5</code> se sabe que se debe copiar el número <code>5</code> en <code>AX</code>, por lo que el número <code>5</code> es un valor inmediato que se almacena en memoria. En cambio, en <code>mov ax, [bx]</code> no se sabe qué valor se debe copiar en <code>AX</code>, ya que depende del contenido de <code>BX</code>. Por lo tanto, <code>[bx]</code> no es un valor inmediato.</p>
 <p>Estos valores inmediatos son números, que se pueden escribir de la siguiente forma:</p>
 <pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #4C9A91">24</span><span style="color: #DBD7CAEE">      </span><span style="color: #758575DD">; Decimal</span></span>
 <span class="line"><span style="color: #4C9A91">18h</span><span style="color: #DBD7CAEE">     </span><span style="color: #758575DD">; Hexadecimal</span></span>
 <span class="line"><span style="color: #4C9A91">11000b</span><span style="color: #DBD7CAEE">  </span><span style="color: #758575DD">; Binario</span></span>
+<span class="line"><span style="color: #C98A7D">'0'</span><span style="color: #DBD7CAEE">     </span><span style="color: #758575DD">; Carácter ASCII</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #4C9A91">0FFh</span><span style="color: #DBD7CAEE">    </span><span style="color: #758575DD">; Si el número empieza con una letra,</span></span>
 <span class="line"><span style="color: #DBD7CAEE">        </span><span style="color: #758575DD">; se debe escribir un 0 antes.</span></span>
 <span class="line"></span>
-<span class="line"><span style="color: #4C9A91">13</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">+</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">8h</span><span style="color: #DBD7CAEE"> </span><span style="color: #758575DD">; Operaciones aritméticas</span></span>
+<span class="line"><span style="color: #4C9A91">13</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">+</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">8h</span><span style="color: #DBD7CAEE">       </span><span style="color: #758575DD">; Operaciones aritméticas</span></span>
 <span class="line"><span style="color: #4C9A91">13</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">*</span><span style="color: #DBD7CAEE"> </span><span style="color: #666666">(</span><span style="color: #4C9A91">7</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">-</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">2</span><span style="color: #666666">)</span></span>
+<span class="line"><span style="color: #C98A7D">'A'</span><span style="color: #DBD7CAEE"> </span><span style="color: #CB7676">+</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">5</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #DBD7CAEE">cinco   </span><span style="color: #758575DD">; Constantes definidas con la directiva EQU y etiquetas a instrucciones</span></span>
 <span class="line"><span style="color: #CB7676">offset</span><span style="color: #DBD7CAEE"> etq </span><span style="color: #758575DD">; Dirección de memoria de la etiqueta 'etq' (que define un DB o DW)</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #CB7676">offset</span><span style="color: #DBD7CAEE"> str </span><span style="color: #CB7676">+</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">4</span><span style="color: #DBD7CAEE"> </span><span style="color: #758575DD">; Dirección de memoria de la cadena 'str' + 4</span></span></code></pre>
+<p>Tantos los caracteres (<code>'a'</code>) como las cadenas de texto (<code>"texto"</code>) se convierten a su valor ASCII según la <a href="/docs/reference/ascii/">tabla ASCII utilizada por VonSim</a>.</p>
 <p>Nótese que hay una diferencia entre las etiquetas de una directiva <code>DB</code> o <code>DW</code> y las etiquetas de una instrucción o <code>EQU</code>. Las segundas pueden ser utilizadas como un reemplazo textual de sus valores. Es decir:</p>
 <pre is:raw="" class="astro-code vitesse-dark" style="background-color: #121212; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #B8A965">org</span><span style="color: #DBD7CAEE"> </span><span style="color: #4C9A91">1000h</span></span>
 <span class="line"><span style="color: #DBD7CAEE">str </span><span style="color: #CB7676">db</span><span style="color: #DBD7CAEE"> </span><span style="color: #C98A7D">"Hola, Mundo!"</span></span>
@@ -648,8 +662,8 @@
 		</a>
 		<p>
 			Última actualización:
-			<time datetime="2023-08-19T05:49:42.000Z">
-				19 ago 2023
+			<time datetime="2023-08-21T17:16:18.000Z">
+				21 ago 2023
 			</time>
 		</p>
 	</div>
